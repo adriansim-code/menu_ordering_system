@@ -145,5 +145,26 @@ burrito.
             amountOfVeggies +=1;
             ingredients = ingredients + ",Pepper and Onions ";
         }
-    }
+        // Add additional items to the cost of the burrito
+        price = price + amountOfProtein*2.15 + amountOfVeggies*1.25;
+// Display order confirmation.
+        System.out.println();
+        System.out.println("Your order is as follows: ");
+        System.out.println(burritoSize + " inch Burrito");
+        System.out.println(tortilla + " tortilla");
+        System.out.println(ingredients);
+/*
+Apply discount if user is eligible.
+*/
+        if(discount){
+            price = price-2;
+        }
+// NOTICE ALL MONEY OUTPUT APPEARS WITH 2 DECIMAL PLACES
+        System.out.printf("The cost of your order is: $%.2f\n", price);
+// Calculate and display tax and total cost.
+        tax = price * taxRate;
+        System.out.printf("The tax is: $%.2f\n", tax);
+        System.out.printf("The total due is: $%.2f\n",(tax + price));
+        System.out.println("Your order will be ready for pickup in 10 minutes.");
+    } 
 }
